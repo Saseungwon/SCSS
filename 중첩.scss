@@ -1,0 +1,13 @@
+.container {
+  > ul {    // 자식요소 > 사용
+    li {
+      .name {
+        font-size: 40px;
+        color: royalblue;
+      }
+      .age {
+        color: orange;
+      }
+    }
+  }
+}
