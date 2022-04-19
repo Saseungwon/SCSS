@@ -1,0 +1,45 @@
+.btn {
+  position: absolute;
+  &.active {
+    color: red;
+  }
+}
+/* CSS
+.btn {
+  position: absolute;
+}
+.btn.active {
+  color: red;
+}
+*/
+
+.list {
+  li {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+/* CSS
+.list li:last-child {
+  margin-right: 0;
+}
+*/
+
+
+.fs {
+  &-small { font-size: 12px; }
+  &-medium { font-size: 12px; }
+  &-large { font-size: 12px; }
+}
+/* CSS
+.fs-small {
+  font-size: 12px;
+}
+.fs-medium {
+  font-size: 12px;
+}
+.fs-large {
+  font-size: 12px;
+}
+*/
