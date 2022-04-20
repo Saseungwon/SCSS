@@ -1,0 +1,41 @@
+div {
+  $size: 30px;
+  width: 20px + 20px;
+  height: 40px - 10px;
+  font-size: 10px * 2;
+  margin: 30px / 2;  // scss에서는 / 는 단축어로 사용되기 때문에 나누기는 다른 방법으로 사용해야한다.  
+  margin:(30px / 2);  // 나누기 방법1
+  margin: $size / 2;  // 나누기 방법2
+  padding: 20px % 7;
+}
+span {
+  font-size: 10px;
+  line-height: 10px;
+  font-family: serif;
+  font: 10px / 10px serif;    // 단축어 /  
+}
+
+/*
+div {
+  width: 40px;
+  height: 30px;
+  font-size: 20px;
+  margin: 30px/2;
+  margin: 15px;
+  margin: 15px;
+  padding: 6px;
+}
+
+span {
+  font-size: 10px;
+  line-height: 10px;
+  font-family: serif;
+  font: 10px/10px serif;
+}
+*/
+
+
+div {
+  width: 100% - 200px;  // 오류!! 기본적인 포맷은 같아야한다. 
+  width: calc(100% - 200px); // calc를 사용하면 가능하다. 
+}
