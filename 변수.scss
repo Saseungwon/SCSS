@@ -1,0 +1,26 @@
+// 변수 (const -> $, = -> :) 
+    $size: 100px; // 맨위에 선언하면 전역변수, 괄호 안에 선언하면 그 안에서만, 
+
+    .container {
+      position: fixed;
+      top: $size;
+      .item {
+        $size: 200px; // 지역변수, 재할당 가능
+        width: $size;
+        height: $size;
+        transform: translateX($size); 
+      }
+      left: $size; // 200px(재할당하면 아래에는 그 값으로)
+    }
+
+    /* CSS
+    .container {
+      position: fixed;
+      top: 100px;
+    }
+    .container .item {
+      width: 200px;
+      height: 200px;
+      transform: translateX(200px);
+    }
+    */
