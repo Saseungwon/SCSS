@@ -1,0 +1,35 @@
+.box {
+  font: {   // : 네임스페이스(-)를 생략할 수 있다. 
+    weight: bold;
+    size: 10px;
+    family: sans-serif;
+  };
+  margin: {
+    top: 10px;
+    left: 20px;
+  };
+  padding: {
+    top: 10px;
+    bottom: 10px;
+    left: 20px;
+    right: 30px;
+  }
+}
+
+/* CSS 
+.box {
+
+  font-weight: bold;
+  font-size: 10px;
+  font-family: sans-serif;
+
+  margin-top: 10px;
+  margin-left: 20px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 30px;
+
+}
+*/
