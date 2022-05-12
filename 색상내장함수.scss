@@ -1,0 +1,41 @@
+// 색상 내장 함수
+    .box {
+      $color: royalblue;
+      width: 200px;
+      height: 100px;
+      margin: 20px;
+      border-radius: 10px;
+      background-color: $color;
+      &:hover {
+          background-color: darken($color, 10%); // 10% 만큼 어둡게 해준다.
+          // 버튼에 마우스 올렸을 때 약간 어둡게 만들기
+      }
+      &.built-in {
+          background-color: mix($color, red); // mix함수 : 1,2 둘을 섞은 색을 반환
+          background-color: lighten($color, 10%); // 10% 만큼 밝게 해준다.
+          background-color: saturate($color, 40%); // 채도를 40% 만큼 높게 해준다.
+          background-color: desaturate($color, 40%); // 채도를 40% 만큼 낮게 해준다.
+          background-color: grayscale($color); // 회색으로 만들어준다. 
+          background-color: rgba($color, .5); // 색상을 반전 시켜준다. (색상,투명도)
+      }
+    }
+
+    // css
+    .box {
+      width: 200px;
+      height: 100px;
+      margin: 20px;
+      border-radius: 10px;
+      background-color: royalblue;
+    }
+    .box:hover {
+      background-color: #214cce;
+    }
+    .box.built-in {
+      background-color: #a03571;
+      background-color: #6d8ce8;
+      background-color: #235aff;
+      background-color: #6d7fb5;
+      background-color: #919191;
+      background-color: rgba(65, 105, 225, 0.5);
+    }
