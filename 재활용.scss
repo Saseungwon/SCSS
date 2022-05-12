@@ -1,0 +1,36 @@
+// @mixin 으로 만들어 놓고
+// @include 로 재사용
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  @include center;
+  .item {
+      @include center;
+  }
+}
+.box {
+  @include center; 
+}
+
+
+// css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
