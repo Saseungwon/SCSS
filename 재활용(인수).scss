@@ -1,0 +1,173 @@
+// @mixin에 (인수) 받아서 재사용
+
+    // 1. 기본
+    @mixin box($size) {
+      width: $size;
+      height: $size;
+      background-color: tomato;
+    }
+    .container {
+      @include box(200px);
+      .item {
+          @include box(100px); 
+      }
+    }
+    .box {
+      @include box(100px); 
+    }
+
+    // css
+    .container {
+      width: 200px;
+      height: 200px;
+      background-color: tomato;
+    }
+    .container .item {
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+    }
+
+
+// 2. 기본값 지정
+    @mixin box($size: 80px) {
+      width: $size;
+      height: $size;
+      background-color: tomato;
+    }
+    .container {
+      @include box(200px);
+      .item {
+          @include box; 
+      }
+    }
+    .box {
+      @include box; 
+    }
+
+    //css
+    @mixin box($size: 80px) {
+      width: $size;
+      height: $size;
+      background-color: tomato;
+    }
+    .container {
+      @include box(200px);
+      .item {
+          @include box; 
+      }
+    }
+    .box {
+      @include box; 
+    }
+
+
+// 3. 여러 매개변수 받을 수 있음
+
+    @mixin box($size: 80px, $color: tomato) {
+      width: $size;
+      height: $size;
+      background-color: $color;
+    }
+    .container {
+      @include box(200px, red);
+      .item {
+          @include box; 
+      }
+    }
+    .box {
+      @include box; 
+    }
+
+    //css
+    .container {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .container .item {
+      width: 80px;
+      height: 80px;
+      background-color: tomato;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background-color: tomato;
+}
+
+// 4. 순서도 중요
+    @mixin box($size: 80px, $color: tomato) {
+      width: $size;
+      height: $size;
+      background-color: $color;
+    }
+    .container {
+      @include box(200px, red);
+      .item {
+          @include box(80px, green); 
+      }
+    }
+    .box {
+      @include box; 
+    }
+
+    //css
+    .container {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .container .item {
+      width: 80px;
+      height: 80px;
+      background-color: green;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background-color: tomato;
+    }
+
+// 5. 키워드 인수 방식으로 해당 이름으로 매칭할 수도 있음
+
+    @mixin box($size: 80px, $color: tomato) {
+      width: $size;
+      height: $size;
+      background-color: $color;
+    }
+    .container {
+      @include box(200px, red);
+      .item {
+          @include box($color: green); 
+      }
+    }
+    .box {
+      @include box; 
+    }
+
+    // css
+    .container {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+    .container .item {
+      width: 80px;
+      height: 80px;
+      background-color: green;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background-color: tomato;
+    }
