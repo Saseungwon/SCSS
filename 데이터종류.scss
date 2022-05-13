@@ -1,0 +1,18 @@
+$number: 1;
+$string: bold;
+$color: red;
+$boolean: true;
+$null: null; 
+
+$list: orange, royalblue, yellow;  // js에서 array와 비슷
+$map: (                            // js에서 object와 비슷
+    o: orange,
+    r: royalblue,
+    y: yellow
+);
+
+.box {
+    width: 100px;
+    color: red;
+    position: relative;
+}
