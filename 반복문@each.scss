@@ -1,0 +1,48 @@
+$list: orange, royalblue, yellow;  // js에서 array와 비슷
+$map: (                            // js에서 object와 비슷
+    o: orange,
+    r: royalblue,
+    y: yellow
+);
+
+@each $c in $list {
+    .box {
+        color: $c;
+    }
+}
+
+// css
+/*
+.box {
+  color: orange;
+}
+
+.box {
+  color: royalblue;
+}
+
+.box {
+  color: yellow;
+}
+*/
+
+@each $k, $v in $map {
+    .box-#{$k}{
+        color: $v;
+    }
+}
+
+// CSS
+/*
+.box-o {
+  color: orange;
+}
+
+.box-r {
+  color: royalblue;
+}
+
+.box-y {
+  color: yellow;
+}
+*/
